@@ -10,14 +10,14 @@ curl -H 'Accept: application/json; indent=4' -u admin:password123 http://127.0.0
 src/
 ├── manage.py
 │
-├── mysite/
+├── api/
 │   ├── __init__.py
 │   ├── asgi.py
 │   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
 │
-└── pools/
+└── files/
     ├── migrations/
     │   └── __init__.py
     ├── __init__.py
