@@ -1,6 +1,11 @@
 # MeLearningDjangoRest
 Me learning Django REST framework
 
+## Notes
+to call the api on the terminal, uou can call for example:
+curl -H 'Accept: application/json; indent=4' -u admin:password123 http://127.0.0.1:8000/users/
+
+
 ## Planned folder structure
 src/
 ├── manage.py

@@ -1,6 +1,10 @@
 # MeLearningDjangoRest
 Me learning Django REST framework
 
+## seed a user
+python manage.py createsuperuser --email admin@example.com --username admin
+password: password123
+
 ## Specification
 Please write a web application that provides a REST API for logged-in users to upload and download any kind of files.
 The users must be able to login and logout. Use either token or session authentication (hint: use the user model and authentication mechanism provided by django). 
