@@ -57,7 +57,7 @@ POST files/upload
       -- username etc
       -- auth_mechanism
 
-    - org
+    - org:
       -- name
 
     - file
