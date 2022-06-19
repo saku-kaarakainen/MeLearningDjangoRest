@@ -7,11 +7,14 @@ urlpatterns = [
 
   # GET files?organizationId={org_id}
   # GET files?userId={user_id}
-  path('', views.FileList.as_view(), name='get_files_list'),
+  path('', views.file_list),
+  path('/', views.file_list),
 
   # GET files/{file_id}
-  path('<int:pk>/', views.FileDownload.as_view(), name='download_file'),
+  path('/<int:pk>', views.file_download),
+  path('/<int:pk>/', views.file_download),
 
   # POST files/upload 
-  path('upload/', views.FileUpload.as_view(), name='upload_file'),
+  path('/upload', views.file_upload),
+  path('/upload/', views.file_upload),
 ]
