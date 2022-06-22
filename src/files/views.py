@@ -18,7 +18,8 @@ def get_object(self, pk):
 # GET files?userId={user_id}
 @api_view(['GET'])
 def file_list(request):
-  files = File.objects.all()
+  org_id = request.user.org_id
+  files = File.objects.filter(org_id).all()
   serializer  = FileSerializer(files, many=None)
   permission_classes = [IsAuthenticated] # TODO: Does this works?
   return Response(serializer.data)
@@ -27,6 +28,13 @@ def file_list(request):
 @api_view(['GET'])
 def file_download(request, pk, format=None):
     file = get_object(pk)
+
+    # increase download count
+    file_count_list= file.values_list("download_count", flat=True)
+    file_count = 0
+    for item in file_count_list:
+      file_count = file_count + item
+
     serializer = FileSerializer(file)
     return Response(serializer.data)
 
